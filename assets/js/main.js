@@ -56,7 +56,7 @@
   }
 
   /* ---------- Certificates filter ---------- */
-  var filterBtns = document.querySelectorAll('.filter-btn');
+  var filterBtns = document.querySelectorAll('.cert-filter-btn, .filter-btn:not(.gallery-filter-btn):not(.tab-btn)');
   var certCards = document.querySelectorAll('.cert-card');
   certCards.forEach(function (c) { c.classList.add('show'); });
 
@@ -73,34 +73,127 @@
     });
   });
 
-  /* ---------- Lightbox ---------- */
+  /* ---------- Gallery filter ---------- */
+  var galleryFilterBtns = document.querySelectorAll('.gallery-filter-btn');
+  var galleryItems = document.querySelectorAll('.gallery-item');
+  galleryFilterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      galleryFilterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.getAttribute('data-filter');
+      galleryItems.forEach(function (item) {
+        var cat = item.getAttribute('data-cat') || 'all';
+        var show = (filter === 'all' || cat === filter);
+        item.style.display = show ? 'block' : 'none';
+      });
+    });
+  });
+
+  /* ---------- Creative Studio Tabs ---------- */
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var targetId = btn.getAttribute('data-tab');
+      var parentSection = btn.closest('section');
+      if (!parentSection) return;
+      parentSection.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('active'); });
+      parentSection.querySelectorAll('.tab-pane').forEach(function (p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      var targetPane = document.getElementById(targetId);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+    });
+  });
+
+  /* ---------- Video Modal Player ---------- */
+  var videoModal = document.getElementById('videoModal');
+  var videoPlayer = document.getElementById('videoModalPlayer');
+  var videoTitle = document.getElementById('videoModalTitle');
+  var videoDesc = document.getElementById('videoModalDesc');
+  var videoClose = document.getElementById('videoModalClose');
+
+  function openVideoModal(src, title, desc) {
+    if (!videoModal || !videoPlayer) return;
+    videoPlayer.src = src;
+    if (videoTitle) videoTitle.innerHTML = '<i class="fa-solid fa-circle-play"></i> ' + (title || 'Video Player');
+    if (videoDesc) videoDesc.textContent = desc || '';
+    videoModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    videoPlayer.play().catch(function () {});
+  }
+
+  function closeVideoModal() {
+    if (!videoModal || !videoPlayer) return;
+    videoPlayer.pause();
+    videoPlayer.removeAttribute('src');
+    videoPlayer.load();
+    videoModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-video-src]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      var src = el.getAttribute('data-video-src');
+      var title = el.getAttribute('data-video-title') || el.closest('.record-card, .video-card')?.querySelector('h3')?.textContent || '';
+      var desc = el.getAttribute('data-video-desc') || el.closest('.record-card, .video-card')?.querySelector('p')?.textContent || '';
+      openVideoModal(src, title, desc);
+    });
+  });
+
+  if (videoClose) {
+    videoClose.addEventListener('click', closeVideoModal);
+  }
+  if (videoModal) {
+    videoModal.addEventListener('click', function (e) {
+      if (e.target === videoModal) closeVideoModal();
+    });
+  }
+
+  /* ---------- Lightbox for Images ---------- */
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = document.getElementById('lightboxImg');
   var lightboxCaption = document.getElementById('lightboxCaption');
   var lightboxClose = document.getElementById('lightboxClose');
 
-  document.querySelectorAll('.cert-card img, .gallery-item img').forEach(function (img) {
+  var zoomableSelector = '.cert-card img, .gallery-item img, .poster-card img, .logo-card img, .pres-thumb-wrap img, .zoomable';
+  document.querySelectorAll(zoomableSelector).forEach(function (img) {
     img.addEventListener('click', function (e) {
       e.stopPropagation();
       lightboxImg.src = img.src;
-      var caption = img.closest('figure') ?
-        img.closest('figure').innerText.replace(/[\n]+/g, ' | ') : '';
-      lightboxCaption.textContent = caption || '';
+      var caption = '';
+      var fig = img.closest('figure');
+      var card = img.closest('.poster-card, .logo-card, .pres-card, .gallery-item, .cert-card');
+      if (fig) {
+        caption = fig.innerText.replace(/[\n]+/g, ' | ').trim();
+      } else if (card) {
+        var h = card.querySelector('h3, h4');
+        var sub = card.querySelector('span, figcaption, p');
+        caption = (h ? h.innerText : '') + (sub ? ' | ' + sub.innerText : '');
+      }
+      lightboxCaption.textContent = caption || img.alt || '';
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
     });
   });
 
   function closeLightbox() {
+    if (!lightbox) return;
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
   }
-  lightboxClose.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', function (e) {
-    if (e.target === lightbox) { closeLightbox(); }
-  });
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  if (lightbox) {
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) { closeLightbox(); }
+    });
+  }
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') { closeLightbox(); }
+    if (e.key === 'Escape') {
+      closeLightbox();
+      closeVideoModal();
+    }
   });
 
   /* ---------- Hero particles ---------- */
