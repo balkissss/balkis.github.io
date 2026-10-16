@@ -89,6 +89,22 @@
     });
   });
 
+  /* ---------- Projects filter ---------- */
+  var projectFilterBtns = document.querySelectorAll('.project-filter-btn');
+  var projectCards = document.querySelectorAll('.projects-grid .project-card');
+  projectFilterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      projectFilterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.getAttribute('data-filter');
+      projectCards.forEach(function (card) {
+        var categories = (card.getAttribute('data-category') || '').split(' ');
+        var show = (filter === 'all' || categories.indexOf(filter) !== -1);
+        card.style.display = show ? 'flex' : 'none';
+      });
+    });
+  });
+
   /* ---------- Creative Studio Tabs ---------- */
   var tabBtns = document.querySelectorAll('.tab-btn');
   tabBtns.forEach(function (btn) {
@@ -136,8 +152,8 @@
     el.addEventListener('click', function (e) {
       e.preventDefault();
       var src = el.getAttribute('data-video-src');
-      var title = el.getAttribute('data-video-title') || el.closest('.record-card, .video-card')?.querySelector('h3')?.textContent || '';
-      var desc = el.getAttribute('data-video-desc') || el.closest('.record-card, .video-card')?.querySelector('p')?.textContent || '';
+      var title = el.getAttribute('data-video-title') || el.closest('.project-card, .record-card, .video-card')?.querySelector('h3')?.textContent || '';
+      var desc = el.getAttribute('data-video-desc') || el.closest('.project-card, .record-card, .video-card')?.querySelector('p')?.textContent || '';
       openVideoModal(src, title, desc);
     });
   });
