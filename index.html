@@ -6,8 +6,8 @@
   <meta name="description" content="Balkis Selmi — Geomatics Engineering student passionate about geospatial technology, artificial intelligence and sustainability. Portfolio, projects, certificates and more." />
   <title>Balkis Selmi | Geomatics Engineer &amp; Innovator</title>
 
-  <!-- Favicon (inline SVG) -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2300b894'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EB%3C/text%3E%3C/svg%3E" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,14 +24,23 @@
 
   <!-- ============ PRELOADER ============ -->
   <div class="preloader" id="preloader">
-    <div class="loader-ring"></div>
+    <div class="preloader-avatar-wrap">
+      <img src="assets/images/profile-avatar.jpg" alt="Balkis Selmi" class="preloader-avatar" />
+      <div class="loader-ring"></div>
+    </div>
     <span class="loader-text">Balkis Selmi</span>
   </div>
 
   <!-- ============ NAVIGATION ============ -->
   <header class="nav" id="navbar">
     <div class="container nav-inner">
-      <a href="#hero" class="brand"><span class="brand-mark">BS</span><span class="brand-text">Balkis<span>.Selmi</span></span></a>
+      <a href="#hero" class="brand" aria-label="Balkis Selmi Home">
+        <div class="brand-avatar-wrap">
+          <img src="assets/images/profile-avatar.jpg" alt="Balkis Selmi" class="brand-avatar" />
+          <span class="brand-status-dot" title="Available for Geospatial &amp; AI Innovation"></span>
+        </div>
+        <span class="brand-text">Balkis<span>.Selmi</span></span>
+      </a>
       <nav class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -88,7 +97,7 @@
       <div class="hero-visual reveal">
         <div class="hero-card">
           <div class="hero-photo-wrap">
-            <img src="assets/images/profile.jpg" alt="Balkis Selmi" class="hero-photo" />
+            <img src="assets/images/profile.jpg" alt="Balkis Selmi — Keynote Speaker &amp; Engineer" class="hero-photo" />
             <span class="photo-badge"><i class="fa-solid fa-location-dot"></i> Tunisia</span>
           </div>
           <div class="floating-stat stat-1">
@@ -352,30 +361,30 @@
   <section class="section section-alt" id="projects">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow">Projects &amp; Screen Demos</span>
+        <span class="eyebrow">Projects &amp; Research</span>
         <h2 class="section-title">Engineering, AI &amp; <span class="accent">Geospatial Solutions</span></h2>
-        <p class="section-intro">Integrated digital twins, live satellite dashboards, clinical data tools, and geospatial algorithms — complete with interactive screen walkthroughs and technical slide decks.</p>
+        <p class="section-intro">Integrated digital twins, Earth observation dashboards, clinical AI data tools, and geospatial algorithms — complete with interactive screen walkthroughs and technical slide decks.</p>
       </div>
 
       <!-- Project Category Filters -->
       <div class="filter-bar reveal">
         <button class="filter-btn project-filter-btn active" data-filter="all"><i class="fa-solid fa-border-all"></i> All Projects</button>
-        <button class="filter-btn project-filter-btn" data-filter="demo"><i class="fa-solid fa-circle-play"></i> Interactive Demos</button>
         <button class="filter-btn project-filter-btn" data-filter="water"><i class="fa-solid fa-droplet"></i> Water &amp; Climate</button>
         <button class="filter-btn project-filter-btn" data-filter="ai-remote"><i class="fa-solid fa-satellite"></i> AI &amp; Remote Sensing</button>
-        <button class="filter-btn project-filter-btn" data-filter="mobility-research"><i class="fa-solid fa-flask"></i> Mobility &amp; Research</button>
+        <button class="filter-btn project-filter-btn" data-filter="mobility-geodesy"><i class="fa-solid fa-compass-drafting"></i> Mobility &amp; Geodesy</button>
+        <button class="filter-btn project-filter-btn" data-filter="research"><i class="fa-solid fa-flask"></i> Research &amp; Healthcare</button>
       </div>
 
       <div class="projects-grid">
 
         <!-- 1. HydroTwin Water Monitoring App & Digital Twin -->
-        <article class="project-card reveal" data-category="demo water ai-remote">
+        <article class="project-card reveal" data-category="water ai-remote">
           <div class="project-media has-video" data-video-src="assets/videos/record-hydrotwin-app.mp4" data-video-title="HydroTwin Mobile App — Smart Water Digital Twin" data-video-desc="Digital twin mobile dashboard combining geospatial telemetry, IoT risk sensors, and AI flood hazard warning models for urban flood prediction.">
-            <img src="assets/images/video-posters/record-hydrotwin-app.jpg" alt="HydroTwin Mobile App Record" class="project-poster" loading="lazy" />
+            <img src="assets/images/video-posters/record-hydrotwin-app.jpg" alt="HydroTwin Smart Water Digital Twin" class="project-poster" loading="lazy" />
             <div class="project-overlay">
               <span class="play-btn-circle"><i class="fa-solid fa-play"></i></span>
             </div>
-            <span class="project-badge-live"><span class="pulse-dot"></span> App Demo</span>
+            <span class="project-badge-live"><span class="pulse-dot"></span> Interactive Walkthrough</span>
             <span class="project-time-badge"><i class="fa-solid fa-clock"></i> 01:36</span>
           </div>
           <div class="project-body">
@@ -385,7 +394,7 @@
               <span class="project-tag">Mobile UI</span>
               <span class="project-tag">IoT Telemetry</span>
             </div>
-            <h3>HydroTwin — Smart Water Solution &amp; App</h3>
+            <h3>HydroTwin — Smart Water Solution &amp; Digital Twin</h3>
             <p>Intelligent digital twin and mobile platform integrating GIS and AI to predict urban flooding and evaluate water risk zones. Features 3D catchment terrain models, precipitation alerts, and real-time telemetry. Certified scientific poster at International Space Star Conference &amp; BrainX Top 15.</p>
             <div class="project-actions">
               <button class="project-play-btn" data-video-src="assets/videos/record-hydrotwin-app.mp4" data-video-title="HydroTwin Mobile App" data-video-desc="Interactive walkthrough of the HydroTwin mobile interface."><i class="fa-solid fa-circle-play"></i> Play Demo</button>
@@ -396,13 +405,13 @@
         </article>
 
         <!-- 2. Drought Monitoring Dashboard -->
-        <article class="project-card reveal" data-category="demo water ai-remote">
+        <article class="project-card reveal" data-category="water ai-remote">
           <div class="project-media has-video" data-video-src="assets/videos/record-drought-monitoring.mp4" data-video-title="Drought Monitoring Dashboard — Satellite GIS Platform" data-video-desc="Interactive GIS dashboard analyzing satellite spectral indices (NDVI, NDWI, VCI) to evaluate drought severity and agricultural stress across Tunisia.">
-            <img src="assets/images/video-posters/record-drought-monitoring.jpg" alt="Drought Monitoring Dashboard Record" class="project-poster" loading="lazy" />
+            <img src="assets/images/video-posters/record-drought-monitoring.jpg" alt="Drought Monitoring Dashboard" class="project-poster" loading="lazy" />
             <div class="project-overlay">
               <span class="play-btn-circle"><i class="fa-solid fa-play"></i></span>
             </div>
-            <span class="project-badge-live"><span class="pulse-dot"></span> Earth Observation</span>
+            <span class="project-badge-live"><span class="pulse-dot"></span> Earth Observation Demo</span>
             <span class="project-time-badge"><i class="fa-solid fa-clock"></i> 02:50</span>
           </div>
           <div class="project-body">
@@ -425,11 +434,11 @@
         <!-- 3. Aquora — Virtual Living Lab -->
         <article class="project-card reveal" data-category="water ai-remote">
           <div class="project-media has-video" data-video-src="assets/videos/video-aquora.mp4" data-video-title="Aquora — AI &amp; GIS Virtual Living Lab for Water Security" data-video-desc="AI- and GIS-based virtual living lab platform for water monitoring, water security, and multi-hazard flood-risk assessment.">
-            <img src="assets/images/video-posters/video-aquora.jpg" alt="Aquora Living Lab Video Pitch" class="project-poster" loading="lazy" />
+            <img src="assets/images/video-posters/video-aquora.jpg" alt="Aquora Virtual Living Lab Platform" class="project-poster" loading="lazy" />
             <div class="project-overlay">
               <span class="play-btn-circle"><i class="fa-solid fa-play"></i></span>
             </div>
-            <span class="project-badge-live"><span class="pulse-dot"></span> Living Lab</span>
+            <span class="project-badge-live"><span class="pulse-dot"></span> Living Lab Pitch</span>
             <span class="project-time-badge"><i class="fa-solid fa-clock"></i> 01:10</span>
           </div>
           <div class="project-body">
@@ -450,13 +459,13 @@
         </article>
 
         <!-- 4. KARTA Project -->
-        <article class="project-card reveal" data-category="demo mobility-research">
+        <article class="project-card reveal" data-category="mobility-geodesy">
           <div class="project-media has-video" data-video-src="assets/videos/record-karta.mp4" data-video-title="KARTA Smart Mobility &amp; Mapping System (MSE HACK 1.0)" data-video-desc="Smart mobility and mapping application developed during MSE HACK 1.0 hackathon, offering intelligent spatial routing and geospatial data exploration.">
-            <img src="assets/images/video-posters/record-karta.jpg" alt="KARTA Project Record" class="project-poster" loading="lazy" />
+            <img src="assets/images/video-posters/record-karta.jpg" alt="KARTA Smart Mobility Platform" class="project-poster" loading="lazy" />
             <div class="project-overlay">
               <span class="play-btn-circle"><i class="fa-solid fa-play"></i></span>
             </div>
-            <span class="project-badge-live"><span class="pulse-dot"></span> Hackathon Project</span>
+            <span class="project-badge-live"><span class="pulse-dot"></span> Hackathon Demo</span>
             <span class="project-time-badge"><i class="fa-solid fa-clock"></i> 02:51</span>
           </div>
           <div class="project-body">
@@ -476,13 +485,13 @@
         </article>
 
         <!-- 5. Psychology Medical Platform -->
-        <article class="project-card reveal" data-category="demo ai-remote">
+        <article class="project-card reveal" data-category="research ai-remote">
           <div class="project-media has-video" data-video-src="assets/videos/record-psychology-medical.mp4" data-video-title="Psychology &amp; Medical Clinical Platform" data-video-desc="Healthcare and psychological dataset annotation management platform with clinical quality assurance, multi-category taxonomy, and ML dataset preparation.">
-            <img src="assets/images/video-posters/record-psychology-medical.jpg" alt="Psychology Medical Project Record" class="project-poster" loading="lazy" />
+            <img src="assets/images/video-posters/record-psychology-medical.jpg" alt="Psychology &amp; Medical Clinical Platform" class="project-poster" loading="lazy" />
             <div class="project-overlay">
               <span class="play-btn-circle"><i class="fa-solid fa-play"></i></span>
             </div>
-            <span class="project-badge-live"><span class="pulse-dot"></span> Health Tech AI</span>
+            <span class="project-badge-live"><span class="pulse-dot"></span> Health Tech AI Demo</span>
             <span class="project-time-badge"><i class="fa-solid fa-clock"></i> 03:39</span>
           </div>
           <div class="project-body">
@@ -502,13 +511,13 @@
         </article>
 
         <!-- 6. Sfax Water Observatory -->
-        <article class="project-card reveal" data-category="demo water">
+        <article class="project-card reveal" data-category="water">
           <div class="project-media has-video" data-video-src="assets/videos/record-sfax-water-observatory.mp4" data-video-title="Sfax Water Observatory — Regional Water Intelligence" data-video-desc="Regional hydroinformatics observatory tracking municipal water supply networks, reservoir reserves, consumption patterns, and leak detection in Sfax.">
-            <img src="assets/images/video-posters/record-sfax-water-observatory.jpg" alt="Sfax Water Observatory Record" class="project-poster" loading="lazy" />
+            <img src="assets/images/video-posters/record-sfax-water-observatory.jpg" alt="Sfax Regional Water Observatory" class="project-poster" loading="lazy" />
             <div class="project-overlay">
               <span class="play-btn-circle"><i class="fa-solid fa-play"></i></span>
             </div>
-            <span class="project-badge-live"><span class="pulse-dot"></span> Water Governance</span>
+            <span class="project-badge-live"><span class="pulse-dot"></span> Water Governance Demo</span>
             <span class="project-time-badge"><i class="fa-solid fa-clock"></i> 02:31</span>
           </div>
           <div class="project-body">
@@ -524,7 +533,6 @@
               <button class="project-play-btn" data-video-src="assets/videos/record-sfax-water-observatory.mp4" data-video-title="Sfax Water Observatory" data-video-desc="Regional water observatory tracking municipal water networks and stress indicators."><i class="fa-solid fa-circle-play"></i> Play Demo</button>
               <span class="project-date">Regional Initiative</span>
             </div>
-          </div>
         </article>
 
         <!-- 7. Solar PV Fleet Monitoring & ML Energy Forecasting -->
@@ -550,7 +558,7 @@
         </article>
 
         <!-- 8. Seismic Exploration Automation & Geodesy -->
-        <article class="project-card reveal" data-category="ai-remote mobility-research">
+        <article class="project-card reveal" data-category="mobility-geodesy">
           <div class="project-media has-banner" style="background: linear-gradient(135deg, #162438, #1a3c5a);">
             <div class="project-banner-icon" style="color: #00d4a9; border-color: rgba(0,212,169,.35);"><i class="fa-solid fa-mountain-sun"></i></div>
             <span class="project-banner-badge"><i class="fa-solid fa-compass-drafting"></i> ETAP · Geodesy</span>
@@ -594,7 +602,7 @@
         </article>
 
         <!-- 10. SDGs as a Lever for Education Transformation -->
-        <article class="project-card reveal" data-category="mobility-research">
+        <article class="project-card reveal" data-category="research">
           <div class="project-media has-banner" style="background: linear-gradient(135deg, #2b1f3d, #1a2238);">
             <div class="project-banner-icon" style="color: #e056fd; border-color: rgba(224,86,253,.35);"><i class="fa-solid fa-graduation-cap"></i></div>
             <span class="project-banner-badge"><i class="fa-solid fa-book-open"></i> ENIM · Research</span>
@@ -1145,16 +1153,12 @@
           <div class="vol-head">
             <div class="vol-icon"><i class="fa-solid fa-compass"></i></div>
             <div class="vol-meta">
-              <h3>Member — Tunisian Scouts</h3>
+              <h3>Tunisian Scouts</h3>
               <span class="vol-org">Les Scouts Tunisiens</span>
-              <span class="vol-time">2016 – Present</span>
+              <span class="vol-time">2014 – 2015</span>
             </div>
           </div>
-          <ul class="vol-bullets">
-            <li>Developed foundational leadership, field survival, environmental ethics, and teamwork skills through scout camps and outdoor activities.</li>
-            <li>Organized local community service campaigns, solidarity food drives, and environmental cleanup days.</li>
-            <li>Promoted active citizenship, self-reliance, and youth volunteerism in Tunisian society.</li>
-          </ul>
+          <p class="vol-summary">Tunisian Scouts member actively participating in youth leadership, outdoor camps, environmental stewardship, and community volunteer initiatives.</p>
         </article>
 
         <!-- 6. Arabic Tutor - Preply -->
@@ -1250,8 +1254,16 @@
 
       <div class="cert-grid" id="certGrid">
         <figure class="cert-card" data-cat="awards">
-          <img src="assets/images/events/oman-climate-week-certificate.jpg" alt="Oman Climate Week 2026 Certificate of Appreciation" loading="lazy" />
-          <figcaption><strong>Oman Climate Week 2026</strong><span>Certificate of Appreciation — Environment Authority Oman</span></figcaption>
+          <img src="assets/images/certificates/rcoy-mena-2026-certificate.jpg" alt="RCOY MENA 2026 Certificate of Appreciation" loading="lazy" />
+          <figcaption><strong>RCOY MENA 2026</strong><span>Certificate of Appreciation — Chosen from 18,000+ Registrants (Nizwa, Oman)</span></figcaption>
+        </figure>
+        <figure class="cert-card" data-cat="awards">
+          <img src="assets/images/certificates/oman-climate-week-2026-cert-official.jpg" alt="Oman Climate Week 2026 Certificate of Appreciation" loading="lazy" />
+          <figcaption><strong>Oman Climate Week 2026</strong><span>Official Certificate of Appreciation — Environment Authority Oman</span></figcaption>
+        </figure>
+        <figure class="cert-card" data-cat="awards tech">
+          <img src="assets/images/certificates/green-mse-certificate.jpg" alt="GREEN MSE 2025–2026 Attestation d'Adhésion" loading="lazy" />
+          <figcaption><strong>GREEN MSE — 2026</strong><span>Attestation d'Adhésion — UNESCO Chair &amp; BNA Bank</span></figcaption>
         </figure>
         <figure class="cert-card" data-cat="awards">
           <img src="assets/images/events/toyp-2026-award.jpg" alt="JCI TOYP 2026 Ten Outstanding Young Persons" loading="lazy" />
@@ -1307,10 +1319,13 @@
         </figure>
       </div>
 
-      <p class="cert-note reveal"><i class="fa-solid fa-file-arrow-down"></i> Professional certificates also available as PDFs:
-        <a href="assets/documents/Code_Alpha_Internship_Certificate.pdf" target="_blank">Code Alpha Internship</a> ·
-        <a href="assets/documents/Diploma_C_Programming.pdf" target="_blank">Diploma in C</a> ·
-        <a href="assets/documents/IBM_TechXchange_LLM_Agent.pdf" target="_blank">IBM TechXchange LLM Agent</a>
+      <p class="cert-note reveal"><i class="fa-solid fa-file-arrow-down"></i> Official certificates available for download:
+        <a href="assets/documents/certificates/RCOY_MENA_2026_Certificate.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> RCOY MENA 2026 (PDF)</a> ·
+        <a href="assets/documents/certificates/Oman_Climate_Week_2026_Certificate.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Oman Climate Week 2026 (PDF)</a> ·
+        <a href="assets/documents/certificates/Green_MSE_Attestation_Adhesion.jpg" target="_blank"><i class="fa-solid fa-file-image"></i> GREEN MSE Attestation</a> ·
+        <a href="assets/documents/Code_Alpha_Internship_Certificate.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Code Alpha Internship</a> ·
+        <a href="assets/documents/Diploma_C_Programming.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> Diploma in C</a> ·
+        <a href="assets/documents/IBM_TechXchange_LLM_Agent.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i> IBM TechXchange LLM Agent</a>
       </p>
     </div>
   </section>
@@ -1332,6 +1347,16 @@
 
       <div class="gallery-grid reveal">
         <!-- New Featured Events -->
+        <figure class="gallery-item" data-cat="climate youth">
+          <img src="assets/images/events/green-mse-integration-day-presentation.jpg" alt="GREEN MSE Integration Day 2026 Keynote" loading="lazy" />
+          <figcaption>GREEN MSE Integration Day 2026 — Keynote Presentation on Club Pillars &amp; Environmental Impact</figcaption>
+        </figure>
+
+        <figure class="gallery-item" data-cat="climate youth">
+          <img src="assets/images/events/green-mse-integration-day-team.jpg" alt="GREEN MSE Integration Day Team &amp; Exhibition" loading="lazy" />
+          <figcaption>GREEN MSE Integration Day 2026 — Executive Team &amp; Sustainability Workshop Booth</figcaption>
+        </figure>
+
         <figure class="gallery-item" data-cat="climate">
           <img src="assets/images/events/oman-climate-week-2026-delegate.jpg" alt="Oman Climate Week 2026" loading="lazy" />
           <figcaption>Oman Climate Week 2026 — Representing Tunisia at Oman Convention &amp; Exhibition Centre</figcaption>

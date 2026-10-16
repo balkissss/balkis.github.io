@@ -56,18 +56,19 @@
   }
 
   /* ---------- Certificates filter ---------- */
-  var filterBtns = document.querySelectorAll('.cert-filter-btn, .filter-btn:not(.gallery-filter-btn):not(.tab-btn)');
+  var certFilterBtns = document.querySelectorAll('.cert-filter-btn');
   var certCards = document.querySelectorAll('.cert-card');
   certCards.forEach(function (c) { c.classList.add('show'); });
 
-  filterBtns.forEach(function (btn) {
+  certFilterBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      certFilterBtns.forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
       var filter = btn.getAttribute('data-filter');
       certCards.forEach(function (card) {
         var cat = card.getAttribute('data-cat') || 'none';
-        var show = (filter === 'all' || cat === filter);
+        var categories = cat.split(' ');
+        var show = (filter === 'all' || categories.indexOf(filter) !== -1);
         card.classList.toggle('show', show);
       });
     });
@@ -83,7 +84,8 @@
       var filter = btn.getAttribute('data-filter');
       galleryItems.forEach(function (item) {
         var cat = item.getAttribute('data-cat') || 'all';
-        var show = (filter === 'all' || cat === filter);
+        var categories = cat.split(' ');
+        var show = (filter === 'all' || categories.indexOf(filter) !== -1);
         item.style.display = show ? 'block' : 'none';
       });
     });
